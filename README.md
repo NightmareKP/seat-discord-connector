@@ -37,11 +37,17 @@ Go on the [following url](https://discordapp.com/developers/applications) and cl
 Take a note of the following information :
  - From the sidebar, under **General Information**
    - `Client ID` which is a displayed number
-   - `Client Secret` which is a strange text (hit the **Click to reveal** link)
+ - From the sidebar, under **OAuth2**
+   - `Client Secret` which is a strange text (hit the **Reset Secret** Button)
  - From the sidebar, under **Bot**
-   - `Token` which is a strange text (hit the **Click to Reveal Token** link).
+   - `Token` which is a strange text (hit the **Reset Token** Button).
 
 ### Install Package
+> **IMPORTANT**
+> This part is only needed if you used the manual Installation. If you used the Docker Installation, refere to SeAT Documentation Section -> Community Packages and jump to SetUp Package after that.
+> All commands have to be run using the SeAT instance user `www-data`, `seat` or whatever you've done with your installation.
+> They need to be run at root SeAT directory which used to be `/var/www/seat`
+
 Since SeAT 3.0 - it's become super easy to install package. Just require `warlof/seat-discord-connector`, publish vendor and run migrations scripts :)
 
 - Firstly, run the following command `composer require warlof/seat-discord-connector`
@@ -49,10 +55,6 @@ Since SeAT 3.0 - it's become super easy to install package. Just require `warlof
 
 Don't forget to restart `supervisor` with `service supervisor restart` (or your `seat-worker` container if you're under Docker) ;)
 
-> **IMPORTANT**
->
-> All upper command have to be run using the SeAT instance user `www-data`, `seat` or whatever you've done with your installation.
-> They need to be run at root SeAT directory which used to be `/var/www/seat`
 
 ### Setup Package
 Authenticate yourself using admin user on your SeAT instance. If all upper statements have been executed properly, you'll seed a new section into the sidebar called `Connector`.
